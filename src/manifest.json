@@ -1,0 +1,39 @@
+{
+  "name": "Symbol Spacer",
+  "author": "Geert Wille - November Five",
+  "authorEmail": "geert@novemberfive.co",
+  "identifier": "be.novemberfive.symbol-spacer",
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [{
+      "name": "Reset",
+      "identifier": "reset",
+      "script": "./commands/reset.js",
+      "shortcut": "cmd shift r",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "SelectionChanged": "onRun"
+        }
+      }
+    },
+    {
+      "name": "Preferences",
+      "identifier": "change-preferences",
+      "script": "./commands/Preferences.js"
+    },
+    {
+      "name": "Update",
+      "identifier": "update",
+      "script": "./commands/Update.js"
+    }
+  ],
+  "menu": {
+    "title": "Symbol Spacer",
+    "items": [
+      "reset",
+      "change-preferences",
+      "update"
+    ]
+  }
+}

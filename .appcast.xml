@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Symbol Spacer Sketch Plugin</title>
+    <link>https://raw.githubusercontent.com/novemberfiveco/symbol-spacer-sketch-plugin/master/.appcast.xml</link>
+    <description>Automatically resize spacing symbols to correct size when changing to different one</description>
+    <language>en</language>
+    <item>
+      <item>
+        <enclosure url="https://github.com/novemberfiveco/symbol-spacer-sketch-plugin/releases/download/v0.0.1/novemberfive-symbol-spacer.sketchplugin.zip" sparkle:version="0.0.1"/>
+      </item>
+    </item>
+  </channel>
+</rss>

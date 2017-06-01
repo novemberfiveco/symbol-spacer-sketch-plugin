@@ -1,0 +1,21 @@
+# build artefacts
+novemberfive-symbol-spacer.sketchplugin/Contents/Sketch
+novemberfive-symbol-spacer.sketchplugin/Contents/Resources/Preferences.js
+novemberfive-symbol-spacer.sketchplugin/Contents/Resources/Portal.js
+
+# npm
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# mac
+.DS_Store
+
+# Optional npm cache directory
+.npm
+
+# IDE
+.vscode

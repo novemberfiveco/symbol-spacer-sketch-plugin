@@ -1,0 +1,44 @@
+body {
+  font-family: -apple-system;
+}
+
+.save {
+  position: fixed;
+  width: 100%;
+  bottom: 23px;
+  left: 0;
+  border: 0;
+  border-radius: 0;
+  height: 40px;
+  background-color: #EB3300;
+  color: white;
+  letter-spacing: 0.3px;
+  font-size: 13px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#container {
+  margin-bottom: 70px;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+input[type="number"] {
+  display: block;
+}
+
+input[type="text"] {
+  display: block;
+}
+
+select {
+  display: block;
+  width: 150px;
+}
+
+.form {
+  padding-top: 10px;
+}
