@@ -8,10 +8,5 @@
     <item>
       <enclosure url="https://github.com/novemberfiveco/symbol-spacer-sketch-plugin/releases/download/v0.1.0/novemberfive-symbol-spacer.sketchplugin.zip" sparkle:version="0.1.0"/>
     </item>
-    <item>
-      <item>
-        <enclosure url="https://github.com/novemberfiveco/symbol-spacer-sketch-plugin/releases/download/v0.0.1/novemberfive-symbol-spacer.sketchplugin.zip" sparkle:version="0.0.1"/>
-      </item>
-    </item>
   </channel>
 </rss>
