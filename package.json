@@ -1,6 +1,6 @@
 {
   "name": "symbol-spacer-sketch-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Automatically resize spacing symbols to correct size when changing to different one",
   "main": "novemberfive-symbol-spacer.sketchplugin",
   "manifest": "src/manifest.json",
