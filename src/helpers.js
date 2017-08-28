@@ -1,11 +1,18 @@
 import { ModelClasses } from 'sketch-constants'
 
 export {
-  findLayersMatchingPredicateInContainerFilterByType, findFirstLayerMatchingPredicateInContainerFilterByType, findLayersNamed,
+  deselectAllLayers, findLayersMatchingPredicateInContainerFilterByType, findFirstLayerMatchingPredicateInContainerFilterByType, findLayersNamed, findLayersNamedLike, 
   findArtboardsNamed, findArtboardsNamedLike, findPagesNamed, findPagesNamedLike, findLayersOfType, findLayersByRegexInContainer,
   selectLayersByRegexInContainer, selectLayersByRegexAndTypeInContainer, selectLayersFromList, getPluginInfo, getJSONFromFile,
   getPluginDirectory, getCurrentFileName, executeSafely, setIconForAlert, createFailAlert, createInput, createInputWithCheckbox,
   createSelect, TextArea
+}
+
+function deselectAllLayers (document) {
+  const selectedLayers = document.selectedLayers().layers()
+  if (selectedLayers.count()) {
+    selectedLayers.firstObject().select_byExpandingSelection(false, false)
+  }
 }
 
 function findLayersMatchingPredicateInContainerFilterByType (document, predicate, container, layerType) {
@@ -69,6 +76,18 @@ function findLayersNamed (document, layerNames, container, layerType) {
   return findLayersMatchingPredicateInContainerFilterByType(document, predicate, container)
 }
 
+// Search for Layers by Name
+// layerName parameter is required. container and layerType are optional.
+function findLayersNamedLike (document, layerNames, container, layerType) {
+  let predicate
+  if (typeof layerNames == 'string') {
+    predicate = (typeof layerType === 'undefined' || layerType == null) ? NSPredicate.predicateWithFormat('name CONTAINS %@', layerNames) : NSPredicate.predicateWithFormat('name LIKE %@ && class == %@', layerNames, layerType)
+  } else {
+    predicate = (typeof layerType === 'undefined' || layerType == null) ? NSPredicate.predicateWithFormat('name IN %@', layerNames) : NSPredicate.predicateWithFormat('name IN %@ && class == %@', layerNames, layerType)
+  }
+  return findLayersMatchingPredicateInContainerFilterByType(document, predicate, container)
+}
+
 // Search for Layers by type
 function findLayersOfType (document, layerType, container) {
   let predicate = NSPredicate.predicateWithFormat('class == %@', layerType)
@@ -119,7 +138,7 @@ function selectLayersByRegexInContainer (document, layerName, containerLayer) {
   let layers = scope.filteredArrayUsingPredicate(predicate)
 
   // Deselect current selection
-  document.currentPage().deselectAllLayers()
+  deselectAllLayers(document)
 
   // Loop through filtered layers and select them
   let loop = layers.objectEnumerator()
@@ -139,7 +158,7 @@ function selectLayersByRegexAndTypeInContainer (document, layerName, layerType, 
 
 
   // Deselect current selection
-  document.currentPage().deselectAllLayers()
+  deselectAllLayers(document)
 
   // Loop through filtered layers and select them
   let loop = layers.objectEnumerator()
@@ -152,7 +171,7 @@ function selectLayersByRegexAndTypeInContainer (document, layerName, layerType, 
 }
 
 function selectLayersFromList (document, layerList) {
-  document.currentPage().deselectAllLayers()
+  deselectAllLayers(document)
   // Loop through filtered layers and select them
   let loop = layerList.objectEnumerator()
   let layer

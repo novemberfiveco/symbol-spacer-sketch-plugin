@@ -18,6 +18,11 @@
       }
     },
     {
+      "name": "Toggle Visibility",
+      "identifier": "toggle-visibility",
+      "script": "./commands/toggleVisibility.js"
+    },
+    {
       "name": "Preferences",
       "identifier": "change-preferences",
       "script": "./commands/Preferences.js"
@@ -32,6 +37,7 @@
     "title": "Symbol Spacer",
     "items": [
       "reset",
+      "toggle-visibility",
       "change-preferences",
       "update"
     ]
