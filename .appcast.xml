@@ -6,6 +6,9 @@
     <description>Automatically resize spacing symbols to correct size when changing to different one</description>
     <language>en</language>
     <item>
+      <enclosure url="https://github.com/novemberfiveco/symbol-spacer-sketch-plugin/releases/download/v0.1.2/novemberfive-symbol-spacer.sketchplugin.zip" sparkle:version="0.1.2"/>
+    </item>
+    <item>
       <enclosure url="https://github.com/novemberfiveco/symbol-spacer-sketch-plugin/releases/download/v0.1.1/novemberfive-symbol-spacer.sketchplugin.zip" sparkle:version="0.1.1"/>
     </item>
     <item>
