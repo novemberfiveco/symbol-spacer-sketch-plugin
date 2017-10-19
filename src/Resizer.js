@@ -30,7 +30,7 @@ class Resizer {
           layer.resetSizeToMaster()
         }
 
-        if (this._renameSymbol) {
+        if (this._renameSymbol && layer.name().indexOf(this._spacerName) > -1)  {
           layer.name = layer.symbolMaster().name()
         }
       }
